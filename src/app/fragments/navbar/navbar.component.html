@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="d-flex align-items-center">
+    <button mat-icon-button (click)="onToggleSidebar()">
+      <mat-icon>menu_rounded</mat-icon>
+    </button>
+    <h1 class="custom-h1">{{ title.getTitle() }}</h1>
+  </div>
+  <div>
+    <app-mat-avatar [firstName]="firstName" [lastName]="lastName" [matMenuTriggerFor]="menu"></app-mat-avatar>
+    <mat-menu #menu="matMenu" class="navbar__menu">
+      <div *ngIf="firstName && lastName">
+        <div class="menu__name">{{ firstName }} {{ lastName }}</div>
+        <hr />
+      </div>
+      <button class="menu__disconnect" mat-menu-item (click)="onLogout()">
+        <mat-icon>logout</mat-icon>
+        <span>Déconnexion</span>
+      </button>
+    </mat-menu>
+  </div>
+</nav>

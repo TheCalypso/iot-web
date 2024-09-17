@@ -1,0 +1,113 @@
+@use '@angular/material' as mat;
+@use '../../../theme/palette.scss' as palette;
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-px-12) var(--spacing-px-18);
+  background-color: mat.m2-get-color-from-palette(palette.$md-primary, 900);
+  overflow: hidden;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100px;
+      transition: max-width 250ms ease-in-out;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-px-18);
+  }
+
+  &__list-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-px-12);
+    align-items: flex-start;
+
+    button {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      background-color: white;
+      color: black;
+      gap: var(--spacing-px-6);
+
+      &:not(.is-active) {
+        background-color: transparent;
+        color: white;
+      }
+
+      &:not(.is-active):hover {
+        background-color: white;
+        color: black;
+      }
+
+      .label {
+        max-width: 210px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      mat-icon {
+        margin: 0;
+      }
+    }
+
+    .icon-btn {
+      width: auto;
+    }
+  }
+
+  &__captions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .mat-list-base .mat-list-item,
+  .mat-list-base .mat-list-option {
+    height: 48px;
+  }
+
+  .mdc-list-item:hover::before {
+    opacity: 0;
+  }
+}
+
+.sidebar-container--small {
+  max-width: 40px;
+
+  .sidebar-container {
+    &__logo {
+      img {
+        max-width: 50px;
+      }
+    }
+
+    &__list-items {
+      align-items: center;
+
+      button {
+        justify-content: center;
+        min-width: max-content;
+        gap: 0;
+
+        .label {
+          max-width: 0;
+        }
+      }
+    }
+  }
+}

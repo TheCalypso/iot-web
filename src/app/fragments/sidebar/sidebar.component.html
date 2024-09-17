@@ -1,0 +1,32 @@
+<div class="sidebar-container" [ngClass]="(sidebar$ | async) ? 'sidebar-container--small' : ''">
+  <div class="sidebar-container__list">
+    <div class="sidebar-container__logo">
+      <img src="assets/gaspezia.png" />
+    </div>
+    <hr />
+    <div class="sidebar-container__list-items">
+      <ng-container *ngFor="let link of elements">
+        <button
+          mat-button
+          class="x-medium"
+          [routerLink]="[link.routerLink]"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          [matTooltip]="(sidebar$ | async) ? (link.text | translate) : ''"
+          [matTooltipPosition]="'right'"
+        >
+          <mat-icon>{{ link.icon }}</mat-icon>
+          <div class="label">{{ link.text | translate }}</div>
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="sidebar-container__captions mat-caption">
+    <span class="text-center">
+      {{ 'sidebar.captions.' + ((sidebar$ | async) ? 'short' : 'default') + '.brand' | translate }}
+    </span>
+    <span *ngIf="!(sidebar$ | async)"> {{ 'sidebar.captions.default.rights' | translate }} </span>
+    <span>{{ 'sidebar.captions.' + ((sidebar$ | async) ? 'short' : 'default') + '.version' | translate }}</span>
+  </div>
+</div>

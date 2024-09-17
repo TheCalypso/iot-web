@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $danger-palette: map.get($theme, danger);
+  $success-palette: map.get($theme, success);
+  $primary-palette: map.get($theme, primary);
+  $grey-palette: map.get($theme, grey);
+
+  .mat-danger {
+    background-color: mat.m2-get-color-from-palette($danger-palette, 500);
+    color: mat.m2-get-color-from-palette($danger-palette, '500-contrast');
+  }
+
+  .mat-success {
+    background-color: mat.m2-get-color-from-palette($success-palette, 500);
+    color: mat.m2-get-color-from-palette($success-palette, '500-contrast');
+  }
+
+  .mat-action {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+    color: mat.m2-get-color-from-palette($primary-palette, '500-contrast');
+  }
+
+  .mat-grey {
+    background-color: mat.m2-get-color-from-palette($grey-palette, 400);
+    color: mat.m2-get-color-from-palette($grey-palette, '400-contrast');
+  }
+
+  .mat-grey-light {
+    background-color: mat.m2-get-color-from-palette($grey-palette, 200);
+    color: mat.m2-get-color-from-palette($grey-palette, '200-contrast');
+  }
+
+  .mat-grey-dark {
+    background-color: mat.m2-get-color-from-palette($grey-palette, 800);
+    color: mat.m2-get-color-from-palette($grey-palette, '800-contrast');
+  }
+}
+
+@mixin theme($theme) {
+  @if $theme !=null {
+    @include color($theme);
+  }
+}

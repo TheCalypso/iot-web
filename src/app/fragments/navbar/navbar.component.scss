@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid mat.m2-get-color-from-palette(mat.$m2-grey-palette, 200);
+  background-color: white;
+  padding: var(--spacing-px-3) var(--spacing-px-12);
+}

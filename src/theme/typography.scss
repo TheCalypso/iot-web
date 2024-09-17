@@ -1,0 +1,97 @@
+@use '@angular/material' as mat;
+
+$headline-1-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 88px,
+  $line-height: 96px,
+  $letter-spacing: 1.5px
+);
+
+$headline-2-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 57px,
+  $line-height: 60px,
+  $letter-spacing: 0.5px
+);
+
+$headline-3-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 48px,
+  $line-height: 50px,
+  $letter-spacing: 0
+);
+
+$headline-4-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 34px,
+  $line-height: 40px,
+  $letter-spacing: 0.25px
+);
+
+$headline-5-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 23px,
+  $line-height: 32px,
+  $letter-spacing: 0
+);
+
+$headline-6-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 20px,
+  $line-height: 32px,
+  $letter-spacing: 0.25px
+);
+
+$subtitle-1-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 15px,
+  $line-height: 28px,
+  $letter-spacing: 0.15px
+);
+
+$subtitle-2-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 14px,
+  $line-height: 22px,
+  $letter-spacing: 0.1px
+);
+
+$body-1-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 16px,
+  $line-height: 24px,
+  $letter-spacing: 0.5px
+);
+
+$body-2-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 14px,
+  $line-height: 20px,
+  $letter-spacing: 0.25px
+);
+
+$caption-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 12px,
+  $line-height: 20px,
+  $letter-spacing: 0.4px
+);
+
+$button-level: mat.m2-define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 500,
+  $font-size: 14px,
+  $line-height: 36px,
+  $letter-spacing: 1.25px
+);

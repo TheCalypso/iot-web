@@ -1,0 +1,17 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav
+    #drawer
+    [ngClass]="pageName === '/login' ? 'z-0' : ''"
+    [mode]="!(handset$ | async) ? 'side' : 'over'"
+    [opened]="!(handset$ | async)"
+  >
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-navbar [inputDrawer]="drawer" [handset]="handset"></app-navbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

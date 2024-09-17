@@ -1,0 +1,23 @@
+mat-sidenav-container {
+    height: 100%;
+  
+    app-sidebar {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      overflow: auto;
+    }
+  
+    app-navbar {
+      display: flex;
+      width: 100%;
+    }
+  
+    main {
+      height: calc(100% - 56px);
+      box-sizing: border-box;
+      padding: 0 var(--spacing-px-30);
+      display: block;
+      overflow: auto;
+    }
+  }

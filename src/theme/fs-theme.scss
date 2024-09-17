@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+@function fs-light-theme($typography, $primary, $accent, $warn, $success, $danger, $grey) {
+  $light-theme: mat.m2-define-light-theme(
+    (
+      color: (
+        primary: $primary,
+        accent: $accent,
+        warn: $warn
+      ),
+      'typography': $typography
+    )
+  );
+  $danger-success: (
+    success: $success,
+    danger: $danger,
+    grey: $grey
+  );
+  @return map-merge($light-theme, $danger-success);
+}
