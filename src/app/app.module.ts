@@ -13,7 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SiteLayoutComponent } from './layout/site-layout/site-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { getFrenchPaginatorIntl } from './french-paginator-intl';
@@ -22,6 +22,9 @@ import { NavbarComponent } from './fragments/navbar/navbar.component';
 import { SidebarComponent } from './fragments/sidebar/sidebar.component';
 import { MatAvatarComponent } from './components/mat-avatar/mat-avatar.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { YamlHttpLoader } from './yaml-http-loader';
+import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,18 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     MaterialModule,
     FormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      compiler: {
+        provide: TranslateCompiler,
+        useClass: TranslateMessageFormatCompiler
+      }
+    })
   ],
   providers: [
     {
@@ -68,3 +82,7 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new YamlHttpLoader(httpClient);
+}

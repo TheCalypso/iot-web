@@ -1,8 +1,6 @@
 <div class="sidebar-container" [ngClass]="(sidebar$ | async) ? 'sidebar-container--small' : ''">
   <div class="sidebar-container__list">
-    <div class="sidebar-container__logo">
-      <img src="assets/gaspezia.png" />
-    </div>
+    <div class="sidebar-container__logo">//<img src="assets/gaspezia.png" /></div>
     <hr />
     <div class="sidebar-container__list-items">
       <ng-container *ngFor="let link of elements">

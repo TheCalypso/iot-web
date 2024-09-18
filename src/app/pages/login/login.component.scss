@@ -1,0 +1,85 @@
+// SCSS pour la page de login du projet IoT Smart Building
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Pour centrer verticalement sur toute la hauteur de la page
+    background-color: #f5f5f5; // Couleur de fond légère pour plus de contraste
+  
+    h1 {
+      text-align: center;
+      font-size:50px;
+      color: #3f51b5; // Couleur du titre (peut être ajustée selon le thème)
+      margin-bottom: 20px;
+      margin-right: 50px;
+    }
+  
+    .login-form {
+      width: 100%;
+      max-width: 400px; // Limite la largeur du formulaire
+    }
+  
+    mat-card {
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Ajout d'une légère ombre pour un effet d'élévation
+      border-radius: 10px; // Arrondi des bords
+  
+      mat-card-header {
+        text-align: center;
+        mat-card-title {
+          font-size: 24px;
+          font-weight: 600;
+          color: #333; // Couleur du texte du titre de la carte
+        }
+      }
+  
+      mat-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; // Espacement entre les champs
+      }
+  
+      mat-card-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+  
+        .actions {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+  
+        button {
+          width: 100%;
+          padding: 12px;
+          font-size: 16px;
+        }
+      }
+    }
+  
+    .full-width {
+      width: 100%;
+    }
+  
+    mat-checkbox {
+      margin-top: 10px;
+      label {
+        font-size: 14px;
+      }
+    }
+  
+    // Responsive
+    @media (max-width: 600px) {
+      .login-form {
+        padding: 10px;
+        max-width: 100%;
+      }
+  
+      mat-card {
+        margin: 0 10px;
+      }
+    }
+  }
+  
