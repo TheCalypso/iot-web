@@ -1,0 +1,13 @@
+title: 'IoT Smart Building'
+login:
+  title: 'Connexion'
+  email:
+    label: 'Email'
+    enter: 'Entrez votre email'
+    required: "L'email est requis"
+    not_valid: "L'email n'est pas valide"
+  password:
+    label: 'Mot de passe'
+    enter: 'Entrez votre mot de passe'
+    required: 'Le mot de passe est requis'
+  button: 'Se connecter'
