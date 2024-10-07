@@ -1,3 +1,13 @@
+sidebar:
+  home: Accueil
+  captions:
+    default:
+      brand: Copyright ©
+      rights: All rights reserved.
+      version: Version 0.0.1
+    short:
+      brand: © Iot Smart Building.
+      version: 0.0.1
 title: 'IoT Smart Building'
 login:
   title: 'Connexion'
@@ -11,3 +21,6 @@ login:
     enter: 'Entrez votre mot de passe'
     required: 'Le mot de passe est requis'
   button: 'Se connecter'
+toast:
+  success:
+    connect: 'Connexion réussie'
